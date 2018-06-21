@@ -1,0 +1,15 @@
+runtime: go
+api_version: go1.8
+service: test-proxy
+
+handlers:
+- url: /.*
+  script: _go_app
+
+# とりあえずスケールしない設定で
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
